@@ -1,0 +1,17 @@
+<form #userpost="ngForm" (ngSubmit)="onSubmit(userpost.value)">
+    <div class="col-sm-10">
+      <label  class="form-label">Add Car Name</label>
+      <select name="carname" class="form-control" (change)="changeCar($event)" ngModel>
+        <option>--Select Car Brand --</option>
+        <option [value]="data._id"  *ngFor="let data of CarList">
+          {{data.brand.brandname}}
+        </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Add cardailyRentalRate</label>
+      <input  name="cardailyRentalRate" class="form-control" type="number"  placeholder="Add cardailyRentalRate" ngModel>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  

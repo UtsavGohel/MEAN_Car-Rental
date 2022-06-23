@@ -1,0 +1,42 @@
+<form #userpost="ngForm" (ngSubmit)="onSubmit(userpost.value)">
+  <div class="mb-3">
+    <label  class="form-label">Add Name</label>
+    <input  name="brandname" class="form-control" placeholder="Add Name" ngModel>
+  </div>
+  <div class="col-sm-10">
+    <label  class="form-label">Add Brand</label>
+    <select name="brand" class="form-control" (change)="changeBrand($event)" ngModel>
+      <option>--Select Car Brand --</option>
+      <option [value]="data._id"  *ngFor="let data of BrandList">
+        {{data.brandname}}
+      </option>
+    </select>
+  </div>
+  <div class="col-sm-10">
+    <label  class="form-label">Add Type</label>
+    <select name="type" class="form-control" (change)="changeType($event)" ngModel>
+      <option>--Select Car Type --</option>
+      <option [value]="data._id"  *ngFor="let data of TypeList">
+        {{data.name}}
+      </option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Add NumberOfSeats</label>
+    <input  name="numberOfSeats" class="form-control" type="number"  placeholder="Add Seats" ngModel>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Add NumberOfDoor</label>
+    <input  name="numberOfDoor" class="form-control" type="number"  placeholder="Add Door" ngModel>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Add NumberInStock</label>
+    <input  name="numberInStock" class="form-control" type="number"  placeholder="Add NumberInStock" ngModel>
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Add dailyRentalRate</label>
+    <input  name="dailyRentalRate" class="form-control" type="number"  placeholder="Add dailyRentalRate" ngModel>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
